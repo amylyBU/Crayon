@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Crayon Database Relations</title>
+		<meta charset="UTF-8">
+
+		<style>
+
+		h1 {
+			color: orange;
+		}
+
+		h2 {
+			color: skyblue;
+		}
+
+		.primary {
+			color: orange;
+		}
+
+		.foreign {
+			background-color:skyblue;
+		}
+
+		table, th, td {
+			border: solid black 1px;
+			border-collapse: collapse;
+			text-align: center;
+		}
+
+		caption {
+			border: solid black 1px;
+			border-bottom: none;
+			color: purple;
+			text-decoration: bold;
+			font-size: 20px;
+		}
+
+		</style>
+	</head>
+
+	<body>
+	<header>
+	Amy Ly (amyly@bu.edu)<br>
+	February 28, 2015
+	</header>
+
+	<h4>Assignment Description:</h4>
+
+	<p>The database design will list your tables and their relationships. Use standard HTML for your submission. You can use another tool to create your database tables - as long as you ask me about it first.
+	</p>
+	<p>You should have a minimum of 4 tables. There is no maximum number of tables you can write. If you have any questions, please email or better yet, ask during our class. Everyone in our class probably has the same question(s).</p>
+
+	<h1>Schemas for Crayon Business Web Application</h1>
+
+	<h2><i>"Keep Calm and Cray-On"</i></h2>
+
+	<p class="primary">orange = primary key</p>
+	<p class="foreign" style="display: inline">skyblue = foreign key</p>
+
+	<br>
+	<br>
+	
+	<table>
+	<caption>Orders</caption> <!-- as opposed to just storing items in shopping carts, this a relation for when customer's actually buy something -->
+		<tr>
+			<th>Attribute</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+
+		<tr>
+			<td class="primary">order_id</td> 
+			<td>INT</td>  
+			<td>primary key</td>	
+		</tr>
+
+		<tr>
+			<td>customer_id</td>
+			<td>INT</td>
+			<td>-</td>
+		</tr>
+
+		<tr>
+			<td>shopping_cart_id</td>
+			<td>INT</td>
+			<td>reference to the shopping cart of this transaction</td>
+		<tr>
+			<td>date_of_purchase</td>
+			<td>DATETIME</td>
+			<td>-</td>
+		</tr>
+
+		<tr>
+			<td>total</td>
+			<td>DOUBLE</td>
+			<td>the total cost of the order in $USD</td>
+		</tr>
+
+		<tr>
+			<td>num_items</td>
+			<td>INT</td>
+			<td>total number of items in bought</td>
+		</tr>
+
+	</table>
+
+	<br>
+
+
+	
+	<table>
+	<caption>Customer</caption>
+		<tr>
+			<th>Attribute</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+
+		<tr>
+			<td class="primary">customer_id</td>
+			<td>INT</td>
+			<td>primary key</td>
+		</tr>
+
+		<tr>
+			<td>first_name</td>
+			<td>VARCHAR(45)</td>
+			<td>-</td>
+		</tr>
+
+		<tr>
+			<td>last_name</td>
+			<td>VARCHAR(45)</td>
+			<td>-</td>
+		</tr>
+
+		<tr>
+			<td>street</td>
+			<td>VARCHAR(45)</td>
+			<td>customer's shipping street</td>
+		</tr>
+
+		<tr> 
+			<td>city</td>
+			<td>VARCHAR(45)</td>
+			<td>shipping city</td>
+		</tr>
+
+		<tr> 
+			<td>postal_code</td>
+			<td>INT</td>
+			<td>shipping postal code</td>
+		</tr>
+
+		<tr> 
+			<td>country</td>
+			<td>VARCHAR(45)</td>
+			<td>country of residence</td>
+		</tr>
+
+		<tr>
+			<td>phone_number</td>
+			<td>INT</td>
+			<td>-</td>
+		</tr>
+
+		<tr>
+			<td>email</td>
+			<td>VARCHAR(45)</td>
+			<td>-</td>
+	</table>
+
+	<br>
+
+	<table>
+	<caption>Credit Card</caption>
+		<tr>
+			<th>Attribute</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+
+		<tr>
+			<td class="foreign primary">customer_id</td>
+			<td>INT</td>
+			<td>foreign key for its owner, Customer: customer_id</td>
+		</tr>
+
+		<tr>
+			<td class="primary">card_number</td>
+			<td>INT</td>
+			<td>credit card number</td>
+		</tr>
+
+		<tr>
+			<td>card_type</td>
+			<td>VARCHAR(45)</td>
+			<td>Discover, Bank of America, etc.</td>
+		</tr>
+
+		<tr>
+			<td>expiration</td>
+			<td>DATETIME</td>
+			<td>expiration date: month and year</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<table>
+	<caption>Crayon</caption>
+		<tr>
+			<th>Attribute</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+
+		<tr>
+			<td class="primary">crayon_id</td>
+			<td>INT</td>
+			<td>primary key</td>
+		</tr>
+
+		<tr>
+			<td>color</td>
+			<td>VARCHAR(45)</td>
+			<td>basic color tag i.e. 'yellow'</td>
+		</tr>
+
+		<tr>
+			<td>name</td>
+			<td>VARCHAR(45)</td>
+			<td>descriptive name i.e. 'wrong kind of snow yellow' for yellow</td>
+		</tr>
+
+		<tr>
+			<td>price</td>
+			<td>FLOAT</td>
+			<td>cost of one crayon</td>
+		</tr>
+
+		<tr>
+			<td>inventory</td>
+			<td>INT</td>
+			<td>the stock count</td>
+		</tr>
+
+	</table>
+
+	<br>
+	
+	<table>
+	<caption>Shopping_Cart</caption>
+		<tr>
+			<th>Attribute</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+
+		<tr>
+			<td class="foreign primary">shopping_cart_id</td>
+			<td>INT</td>
+			<td>foreign key to Orders: shopping_cart_id</td>
+		</tr>
+
+		<tr>
+			<td class="foreign primary">customer_id</td>
+			<td>INT</td>
+			<td>foreign key to Customer: customer_id</td>
+		</tr>
+
+		<tr> 
+			<td class="foreign">crayon_id</td>
+			<td>INT</td>
+			<td>foreign key to Crayon: crayon_id</td>
+		</tr>
+		
+	</table>
+	</body>
+</html>

@@ -1,0 +1,211 @@
+* { 
+	font-family: Raleway; 
+}
+
+html,
+body{
+	margin: 0 auto;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.pure-button { 
+	position: relative;
+}
+
+.clear {
+	clear: both;
+	display:block;
+}
+
+#header {
+    background-color: skyblue;
+    color:white;
+    text-align: center;
+    position: absolute;
+ 	height: 70px;
+ 	width: 100%;
+ 	margin: 0 auto;
+ 	min-width: 715px;
+ 	display: block;
+  }
+
+#nav-home { /* <a> */
+	float: left;
+	margin-top: 5px;
+	margin-left: 20px;
+	color: white;
+	font-size: 50px;
+}
+
+#nav-home:hover {
+	background-color: skyblue;
+	opacity: 0.5;
+}
+
+#nav-list { /* <ul> */
+	list-style-type: none;
+	position: relative;
+	margin-right: 20px;
+}
+
+#nav-list li {
+	float: right;
+	margin-right: 10px;
+}
+
+#nav-shop {
+	float: left;
+	margin-left: 10px;
+	color: gray;
+	line-height: 70px;
+	font-size: 30px;
+}
+
+#landing-container {
+	width: 100%;
+	height: 700px;
+	top: 70px;
+	background-image: url("../images/landing-image.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#landing-blurb-container {
+	top: 220px;
+	min-height: 200px;
+	min-width: 500px;
+	height: auto;
+	margin: 0 auto;
+	padding: 10px;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#landing-blurb-container headline {
+	display: block;
+	font-size: 1in;
+}
+
+#landing-blurb-container slogan {
+	display: block;
+	font-style: italic;
+	font-size: 35px;
+	color: gray;
+	line-height: 50px;
+}
+
+#landing-blurb-container button {
+	width: 100px;
+	background-color: skyblue;
+	font-size: 20px;
+}
+
+#login-modal-dialog {
+    display: none;
+    color: black;
+}
+
+#login-modal-dialog > ul {
+	list-style-type: none;
+	text-align: right;
+}
+
+footer {
+	position: relative;
+	bottom: 0;
+	top: auto;
+	width: 100%;
+	color: gray;
+	background-color: cornsilk;
+	height: 50px;
+	padding: 20px;
+	text-align: center;
+	display: block;
+	min-width: 715px;
+}
+
+#signup-form-container {
+	display: block;
+	width: 100%;
+	top: 70px;
+	background-color: white;
+	text-align: center;
+	position: relative;
+	margin-bottom: 80px;
+}
+
+#signup-blurb {
+	font-size: 40px;
+}
+
+.form-category {
+	font-size: 15px;
+}
+
+#states-drop-list {
+	width: 180px;
+}
+#submit-signup-button {
+	background-color: orange;
+}
+
+#crayon-content {
+	top: 70px;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	display: block;
+	margin-left: 1in;
+	margin-right: 1in;
+	margin-bottom: 80px;
+
+}
+
+.crayon-item-div {
+	display: inline-block;
+	padding: 8px;
+	height: 270px;
+	width: 190px;
+	margin: 20px;
+}
+
+.crayon-img {
+	padding: 5px;
+	border: 4px solid black;
+}
+
+#welcome-blurb {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#logout-button {
+	background-color: cornsilk;
+}
+
+#shopping-cart-container {
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	top: 100px;
+	margin-bottom: 150px;
+	margin-left: 1in;
+	margin-right: 1in;
+	min-width: 715px;
+}
+
+#shopping-cart {
+	margin: auto;
+}
+
+#checkout-button {
+	background-color: orange;
+}

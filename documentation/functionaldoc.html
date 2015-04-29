@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Functional Document | Amy Ly</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h3>General Requirements:</h3>
+		<div>
+		Authentification system with use of encrypted data for any personally-identifiable information on your clients:
+			<ul>
+				<li>This website will store user login information (username, password, email, and associated Paypal connection).</li>
+				<li>Site will be secured with an SSL (Secured Socket Layer) server set up on my own server. The SSL will be requested by the browser (client). The server sends a Certificate, and the browser validates the Certificate, creating a session key and encrypting the Certificate with the key. The server decrypts the session key and establishes the encrypted connection.</li>
+				<li>The Certificate will be obtained from a Certificate Authority like VeriSign</li>
+				<li>Create a folder in web where all secured pages are stored and route all references to secured pages through that secured server.</li>
+			</ul>
+		</div>
+		<div>
+		Use a shopping cart: will use Paypal:
+			<ul>
+				<li>Will use the <a href="https://developer.paypal.com/docs/api/" title="Paypal API Documentation">Paypal API</a> as a method of checking out items</li>
+				<li>Adding an item to cart will create that item in the page of the shopping cart. The price total cost will be updated, tax will be calculated by multiplying the total by 0.0625, and shipping costs will be determined depending on location of the buyer.</li>
+			</ul>
+		</div>
+		<div>
+		Use of AJAX (Asynchronous Javascript and XML) in >= 3 pages:
+			<ul>
+				<li>AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. This means that it's possible to update parts of a web page, without reloading the whole page.</li>
+				<li>The shopping cart will utilize AJAX: adding an item to cart in a different tab in the same browser, for example, will update the shopping cart in the other tab.</li>
+				<li>Item browsing pages will use AJAX: will update the content as the user scrolls down, instead of all at once.</li>
+			</ul>
+		</div>
+		<div>
+		Use of database, SQLite, to store all the data about what is being sold:
+			<ul>
+				<li>Will store item ID#'s, color of the crayons being sold as Strings, price as a float, inventory as an int</li>
+				<li>SQL queries can be used to for filtering products. For instance, shoppers can filter be ascending or descending prices.</li>
+				<li>Can also have a relation for buyers, and then a relation for transactions that will relate the buyer and their products.</li>
+			</ul>
+		</div>
+		<div>
+		Visual appeal:
+			<ul>
+				<li>Website will incporate HTML5, CSS, jQuery, and javascript to create an error free website that will anticipate all user interactions with the website.</li>
+				<li>Use of website will be intuitive. Interface will be clean and modern with a color scheme to be decided.</li>
+			</ul>
+		</div>
+		<div>
+		Use of open source:
+			<ul>
+				<li>Will use open source code for a search bar/search engine on the browsing page.</li>
+				<li>Will use the Paypal API for checking out.</li>
+			</ul>
+		</div>
+		<div>
+		Use-cases (Actor = User, System, and Goals):
+			<ul>
+				<li>User will sign up or log in, on a sign up or log in page, respectively, and the system will store their login information in the database. Checking "keep me logged in" will cache the user's information on their browser. The goal of this is to create a more personalized user experience. Whatever they add to their shopping carts, for example, will be saved on the database in relation to their account information.</li>
+				<li>Users can browse items and choose add them to their shopping cart. While browsing, users can filter their selection by price, newest, color, etc. The goal is to make the shopping experience easier.</li>
+				<li>Items will be tagged with their transitional color names: red, yellow, blue... for easy look up.</li>
+				<li>A search bar will allow users to search for the items they are looking for. Upon a search, the system will look within the database and check if the search value appears exists and/or matches closely with what is being searched, then return those results. The goal is to make finding items more convenient.</li>
+				<li>The shopping cart page will carry all the items that the user has added to it, and will route the user to a secure checkout.</li>
+				<li>The check out process will be handled with Paypal and confirmed via email.</li>
+			</ul>
+		</div>
+	</body>
+</html>
